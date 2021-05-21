@@ -43,7 +43,7 @@ def get_api():
     vectorText = tfidVec.transform(df['data'])
 
     result = loaded_model.predict(vectorText)
-    return result[0]
+    return {'url_type':result[0]}
 
 if __name__ == "__main__":
     app.run(threaded=True)
